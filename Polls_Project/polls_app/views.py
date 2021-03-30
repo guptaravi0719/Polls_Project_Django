@@ -53,9 +53,11 @@ def vote(request,poll_id):
 
 
 def results(request, poll_id):
-
-    poll = Poll.objects.get(pk=poll_id)
-
-    context={'poll' : poll}
-
-    return render(request,'poll/results.html',context)    
+    # dictionary for initial data with 
+    # field names as keys
+    context ={}
+  
+    # add the dictionary during initialization
+    context["poll"] = Poll.objects.get(pk=poll_id)
+          
+    return render(request, "poll/results.html", context)
