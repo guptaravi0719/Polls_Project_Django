@@ -1,3 +1,7 @@
+
+#added by me
+#converting django models to form 
+
 from django.forms import ModelForm
 from .models import Poll
 
